@@ -12,10 +12,14 @@ WORKDIR /app
 
 # Copy the script and entrypoint
 COPY bluetooth-speaker-reconnector.py /app/
+COPY requirements.txt /app/
 COPY entrypoint.sh /app/
 
 # Make scripts executable
 RUN chmod +x /app/bluetooth-speaker-reconnector.py /app/entrypoint.sh
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Set default environment variables
 ENV PYTHONUNBUFFERED=1 \
