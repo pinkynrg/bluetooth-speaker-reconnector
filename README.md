@@ -12,6 +12,24 @@ Automatic Bluetooth speaker connection monitor and Snapcast client for Raspberry
 
 ## Prerequisites
 
+### Network Configuration (Static IP)
+
+Configure a static IP address for reliable network access:
+
+```bash
+# List available connections
+nmcli connection show
+
+# Configure static IP with router-provided DNS (replace values with your network settings)
+sudo nmcli connection modify "netplan-wlan0-francescos-house-5g" \
+  ipv4.addresses 192.168.1.105/24 \
+  ipv4.gateway 192.168.1.254 \
+  ipv4.dns "192.168.1.100 1.1.1.1" \
+  ipv4.method manual
+
+sudo nmcli connection up "netplan-wlan0-francescos-house-5g"
+```
+
 ### PipeWire (Audio System)
 
 Raspberry Pi OS (Bookworm or newer) comes with **PipeWire** pre-installed with Bluetooth support. No additional installation needed.
@@ -37,6 +55,15 @@ newgrp docker
 
 # Verify
 docker --version
+
+# Start Portainer Agent (optional, for remote management)
+docker run -d \
+  -p 9001:9001 \
+  --name portainer_agent \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /var/lib/docker/volumes:/var/lib/docker/volumes \
+  portainer/agent:latest
 ```
 
 ## Usage
