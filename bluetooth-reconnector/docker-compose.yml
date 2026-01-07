@@ -11,6 +11,6 @@ services:
       - /dev/snd:/dev/snd
     environment:
       - BT_MAC=XX:XX:XX:XX:XX:XX
-      - BT_CHECK_INTERVAL=30
-      - BT_TIMEOUT=15
+      - BT_CHECK_INTERVAL=15
+      - BT_TIMEOUT=10
     restart: always
