@@ -1,0 +1,10 @@
+services:
+  snapclient:
+    container_name: snapclient
+    image: pinkynrg/snapclient:latest
+    hostname: snapclient
+    network_mode: host
+    environment:
+      - TZ=Europe/Rome
+    restart: always
+    command: ["snapclient", "-h", "your-snapcast-server.com", "-s", "pulse", "--hostID", "your-client-id"]
