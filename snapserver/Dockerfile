@@ -1,8 +1,6 @@
-FROM alpine:3.17.1
-
+FROM alpine:3.23
 
 RUN apk add --no-cache bash snapcast librespot sed
-
 
 COPY run.sh /
 RUN chmod +x /run.sh
