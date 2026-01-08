@@ -1,0 +1,12 @@
+services:
+  snapclient:
+    image: pinkynrg/snapclient:latest
+    container_name: snapclient
+    hostname: XXX-speaker
+    network_mode: host
+    devices:
+      - /dev/snd:/dev/snd
+    environment:
+      - TZ=Europe/Rome
+    restart: always
+    command: ["snapclient", "-h", "snapcast.francescomeli.com", "-s", "20", "--hostID", "XXX-speaker"]
