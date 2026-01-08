@@ -221,7 +221,7 @@ Configured via command-line arguments in docker-compose.yml:
 The project includes a GitHub Actions workflow that automatically builds and pushes multi-platform Docker images (AMD64 and ARM64) on every push to the main branch.
 
 Images are published to Docker Hub:
-- `pinkynrg/librespot-snapserver:latest`
+- `pinkynrg/snapserver:latest`
 - `pinkynrg/snapclient:latest`
 - `pinkynrg/bluetooth-speaker-reconnector:latest`
 

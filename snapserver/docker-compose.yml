@@ -1,7 +1,7 @@
 services:
-  librespot-snapserver:
-    image: pinkynrg/librespot-snapserver:latest
-    container_name: librespot-snapserver
+  snapserver:
+    image: pinkynrg/snapserver:latest
+    container_name: snapserver
     ports:
       - 1704:1704
       - 1705:1705
@@ -10,5 +10,5 @@ services:
       - DEVICE_NAME=Snapcast
       - CACHE=/data
     volumes:
-      - /mnt/data/librespot-snapserver:/data
+      - /mnt/data/snapserver:/data
     restart: always
