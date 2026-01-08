@@ -3,7 +3,6 @@ services:
     image: pinkynrg/snapclient:latest
     container_name: snapclient
     hostname: XXX-speaker
-    network_mode: host
     volumes:
       - /run/user/1000/pulse:/run/user/1000/pulse
     environment:

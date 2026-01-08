@@ -91,7 +91,13 @@ This will scan and display all available Bluetooth audio devices with their MAC 
 
 ### Adjust Volume
 
-If your audio is too quiet or too loud, you can adjust the PulseAudio volume on the host machine:
+If your audio is too quiet or too loud, you can adjust the PulseAudio volume on the host machine.
+
+**Install pactl (if not already installed):**
+```bash
+sudo apt-get update
+sudo apt-get install pulseaudio-utils
+```
 
 **1. List available audio sinks:**
 ```bash
