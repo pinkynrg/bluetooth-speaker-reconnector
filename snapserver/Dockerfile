@@ -67,6 +67,6 @@ EXPOSE 1704/tcp 1705/tcp
 # Start snapserver with librespot source
 CMD ["/bin/bash", "-c", "\
     cp /etc/snapserver.conf /tmp/snapserver.conf && \
-    sed -i \"s,^source = .*,source = librespot:///librespot?name=Spotify\\&devicename=$DEVICE_NAME\\&bitrate=320\\&volume=100\\&cache=$CACHE,\" /tmp/snapserver.conf && \
+    sed -i \"s,^source = .*,source = librespot:///librespot?name=Spotify\\&devicename=$DEVICE_NAME\\&bitrate=320\\&volume=75\\&cache=$CACHE,\" /tmp/snapserver.conf && \
     exec snapserver -c /tmp/snapserver.conf\
 "]
