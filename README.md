@@ -89,6 +89,42 @@ docker-compose run --rm bluetooth-reconnector python3 /app/bluetooth-speaker-rec
 
 This will scan and display all available Bluetooth audio devices with their MAC addresses.
 
+### Adjust Volume
+
+If your audio is too quiet or too loud, you can adjust the PulseAudio volume on the host machine:
+
+**1. List available audio sinks:**
+```bash
+pactl list sinks short
+```
+
+Output example:
+```
+57   alsa_output.platform-fe00b840.mailbox.stereo-fallback  PipeWire  s16le 2ch 48000Hz  SUSPENDED
+100  bluez_output.60_AB_D2_08_0C_32.1                       PipeWire  s16le 2ch 48000Hz  RUNNING
+```
+
+**2. Check current volume:**
+```bash
+pactl list sinks | grep -i 'volume:'
+```
+
+**3. Increase or decrease volume:**
+```bash
+# Increase by 20%
+pactl set-sink-volume bluez_output.60_AB_D2_08_0C_32.1 +20%
+
+# Decrease by 10%
+pactl set-sink-volume bluez_output.60_AB_D2_08_0C_32.1 -10%
+
+# Set to specific percentage
+pactl set-sink-volume bluez_output.60_AB_D2_08_0C_32.1 80%
+```
+
+Replace `bluez_output.60_AB_D2_08_0C_32.1` with your Bluetooth device name from step 1.
+
+**Note:** Volume changes persist until the device disconnects or the system reboots.
+
 ### Snapcast Server
 
 The Snapcast server streams audio from Spotify (via librespot) to connected clients.
