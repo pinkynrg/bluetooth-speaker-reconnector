@@ -1,6 +1,6 @@
 # Dockerized Snapcast with Bluetooth Speaker Auto-Reconnect
 
-Multi-room audio streaming solution with Snapcast server/client and automatic Bluetooth speaker connection management, fully containerized for Raspberry Pi and x86 systems.
+Multi-room audio streaming solution with Snapcast server/client, Spotify integration via librespot, and automatic Bluetooth speaker connection management, fully containerized for Raspberry Pi and x86 systems.
 
 ## Overview
 
