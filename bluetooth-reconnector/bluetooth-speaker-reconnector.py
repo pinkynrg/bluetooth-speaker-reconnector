@@ -191,13 +191,13 @@ def play_keepalive_sound():
             print(f"[{time.strftime('%H:%M:%S')}] ♪ Keepalive sound played (volume: {volume})")
             return True
         else:
-            print(f"[{time.strftime('%H:%M:%S')}] ⚠ Keepalive failed: {stderr}")
+            print(f"[{time.strftime('%H:%M:%S')}] ✗ Keepalive failed: {stderr}")
             return False
     except Exception as e:
-        print(f"[{time.strftime('%H:%M:%S')}] ⚠ Keepalive error: {e}")
+        print(f"[{time.strftime('%H:%M:%S')}] ✗ Keepalive error: {e}")
         return False
 
-def monitor_connection(mac_address, duration, check_interval=30):
+def monitor_connection(mac_address, duration, check_interval):
     print(f"[{time.strftime('%H:%M:%S')}] Monitoring {mac_address} (check every {check_interval}s)")
     
     try:
